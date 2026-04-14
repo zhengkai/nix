@@ -6,11 +6,30 @@
     enable = true;
     ports = [ 22 ];
     settings = {
-      PermitRootLogin = "no";            # 禁止 root 登录（推荐）
-      PasswordAuthentication = true;      # 允许密码登录
+      PermitRootLogin = "no";       
+      PasswordAuthentication = false;
     };
   };
   networking.firewall.allowedTCPPorts = [ 22 ];
+  
+  users.users.zhengkai = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+  };
+
+  programs.zsh.enable = true;
+  
+  security.sudo.extraRules = [
+    {
+      users = [ "zhengkai" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 
   environment.systemPackages = with pkgs; [
   	curl
@@ -19,5 +38,15 @@
 	htop
 	fd
 	neovim
+	silver-searcher
+	nodejs
+	autojump
+	colordiff
+	cmake
+	iftop
+	net-tools
+	tmux
+	whois
+	tree
   ];
 }
