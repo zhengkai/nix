@@ -15,6 +15,10 @@
 
   programs.zsh = {
     enable = true;
+
+    syntaxHighlighting.enable = true;
+    enableCompletion = true;
+
     initContent = ''
       export LD_PRELOAD=${pkgs.stderred}/lib/libstderred.so
 
