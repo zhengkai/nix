@@ -2,6 +2,8 @@
 
 {
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   services.spice-vdagentd.enable = true;
   services.xserver.videoDrivers = [ "qxl" ];
 
