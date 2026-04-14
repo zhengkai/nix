@@ -2,8 +2,6 @@
 
 {
 
-  home-manager.users.zhengkai = import ./home.nix;
-
   services.spice-vdagentd.enable = true;
   services.xserver.videoDrivers = [ "qxl" ];
 

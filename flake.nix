@@ -13,17 +13,14 @@
         ./configuration.nix
         ./hardware.nix
         ./index.nix
-        home-manager.nixosModules.home-manager
+		./module/system-app.nix
 
-        ({ pkgs, ... }: {
-          environment.systemPackages = with pkgs; [
-            git
-            neovim
-            wget
-            curl
-            htop
-          ];
-        })
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.zhengkai = import ./home.nix;
+        }
       ];
     };
   };

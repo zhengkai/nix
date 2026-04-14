@@ -30,23 +30,4 @@
       ];
     }
   ];
-
-  environment.systemPackages = with pkgs; [
-  	curl
-	wget
-	git
-	htop
-	fd
-	neovim
-	silver-searcher
-	nodejs
-	autojump
-	colordiff
-	cmake
-	iftop
-	net-tools
-	tmux
-	whois
-	tree
-  ];
 }
