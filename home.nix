@@ -7,6 +7,7 @@
   home.homeDirectory = "/home/zhengkai";
 
   home.sessionPath = [
+    "$HOME/.local/bin"
     "$HOME/conf/bin"
   ];
 
