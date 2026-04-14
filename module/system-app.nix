@@ -25,5 +25,6 @@
 	tig
     php
     fzf
+    stderred
   ];
 }
