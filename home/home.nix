@@ -9,11 +9,11 @@
   home.sessionPath = [
     "${config.home.homeDirectory}/.local/bin"
     "${config.home.homeDirectory}/conf/bin"
-    "${config.soulogic.dev.goPath}/bin"
   ];
 
   home.sessionVariables = {
     GOPATH = config.soulogic.dev.goPath;
+    GOBIN = "${config.home.homeDirectory}/.local/bin";
     PIPX_HOME = config.soulogic.dev.pipxPath;
   };
 
@@ -43,5 +43,5 @@
     };
   };
 
-  programs.neovim.enable = true;
+  # programs.neovim.enable = true;
 }

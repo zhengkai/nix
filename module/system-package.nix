@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nixpkgs-unstable, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -17,7 +17,6 @@
     jq
     luarocks
     gnumake
-    neovim
     net-tools
     nodejs
     php
@@ -35,5 +34,7 @@
     vim
     wget
     whois
+    lua
+    ifstat-legacy
   ];
 }

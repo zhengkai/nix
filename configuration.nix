@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
   services.xserver.videoDrivers = [ "qxl" ];
 
