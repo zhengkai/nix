@@ -27,6 +27,7 @@
         ./module/system-package.nix
         ./module/unstable.nix
         ./module/desktop.nix
+        ./module/cpp.nix
 
         home-manager.nixosModules.home-manager
         {
