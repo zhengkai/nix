@@ -35,5 +35,9 @@
     bash-language-server
     lua-language-server
     pyright
+
+    luarocks
+    lua5_1
+    tree-sitter
   ];
 }
