@@ -26,5 +26,6 @@
     php
     fzf
     stderred
+    v2ray
   ];
 }
