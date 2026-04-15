@@ -9,12 +9,11 @@
   home.sessionPath = [
     "${config.home.homeDirectory}/.local/bin"
     "${config.home.homeDirectory}/conf/bin"
-    "${config.soulogic.dev.goBinPath}"
+    "${config.soulogic.dev.goPath}/bin"
   ];
 
   home.sessionVariables = {
-    GOPATH = config.soulogic.dev.goBinPath;
-    GOMODCACHE = config.soulogic.dev.goModPath;
+    GOPATH = config.soulogic.dev.goPath;
   };
 
   programs.autojump.enable = true;

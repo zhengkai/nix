@@ -30,5 +30,6 @@
     v2ray
     vim
     wget
+    python3
   ];
 }

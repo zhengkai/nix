@@ -11,7 +11,6 @@ in
   };
 
   config.soulogic.dev = {
-    goBinPath = "${goPath}/bin";
-    goModPath = "${goPath}/pkg/mod";
+    goPath = goPath;
   };
 }
