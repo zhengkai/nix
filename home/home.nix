@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.stateVersion = "25.11";
@@ -7,19 +7,15 @@
   home.homeDirectory = "/home/zhengkai";
 
   home.sessionPath = [
-    "$HOME/.local/bin"
-    "$HOME/conf/bin"
-    "$HOME/go/bin"
+    "${config.home.homeDirectory}/.local/bin"
+    "${config.home.homeDirectory}/conf/bin"
+    "${config.soulogic.dev.goBinPath}"
   ];
 
   home.sessionVariables = {
-    GOPATH = "${config.home.homeDirectory}/app/go";
-    GOMODCACHE = "${config.home.homeDirectory}/app/go/pkg/mod";
+    GOPATH = config.soulogic.dev.goBinPath;
+    GOMODCACHE = config.soulogic.dev.goModPath;
   };
-
-  home.sessionPath = [
-    "${config.home.homeDirectory}/app/go/bin"
-  ];
 
   programs.autojump.enable = true;
 

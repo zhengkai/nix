@@ -19,7 +19,12 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.zhengkai = import ./home.nix;
+          home-manager.users.zhengkai = {
+		    imports = [
+              ./home/dev.nix
+              ./home/home.nix
+            ];
+          };
         }
       ];
     };
