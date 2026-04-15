@@ -15,7 +15,8 @@
       modules = [
         ./configuration.nix
         ./hardware.nix
-        ./index.nix
+        ./module/global.nix
+        ./module/ssh.nix
 		./module/system-package.nix
 		./module/desktop.nix
 

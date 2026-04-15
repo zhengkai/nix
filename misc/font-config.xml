@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+ <alias binding="same">
+  <family>微软雅黑</family>
+  <default>
+   <family>Microsoft YaHei</family>
+  </default>
+ </alias>
+ <alias binding="same">
+  <family>微軟正黑體</family>
+  <default>
+   <family>Microsoft JhengHei</family>
+  </default>
+ </alias>
+ <alias binding="same">
+  <family>Consolas</family>
+  <default>
+   <family>JetBrains Mono NL</family>
+  </default>
+ </alias>
+ <alias binding="same">
+  <family>SFMono-Regular</family>
+  <default>
+   <family>JetBrains Mono NL</family>
+  </default>
+ </alias>
+ <alias binding="same">
+  <family>Courier</family>
+  <default>
+   <family>JetBrains Mono NL</family>
+  </default>
+ </alias>
+ <alias binding="same">
+  <family>Courier New</family>
+  <default>
+   <family>JetBrains Mono NL</family>
+  </default>
+ </alias>
+</fontconfig>

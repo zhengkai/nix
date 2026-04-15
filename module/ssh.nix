@@ -15,7 +15,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     openssh.authorizedKeys.keyFiles = [
-      ./key/zhengkai.pub
+      ../key/zhengkai.pub
     ];
   };
 

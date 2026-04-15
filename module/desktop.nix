@@ -1,10 +1,11 @@
 { config, pkgs, lib, ... }:
 
-let
-  isDesktop = config.services.xserver.enable || config.programs.hyprland.enable;
-in
 {
-  config = lib.mkIf isDesktop {
+  imports = [
+    ./font.nix
+  ];
+
+  config = lib.mkIf config.soulogic.desktop.enable {
     environment.systemPackages = with pkgs; [
       google-chrome
     ];
