@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     autojump
-    cmake
     colordiff
     curl
     editorconfig-core-c
@@ -15,7 +14,6 @@
     htop
     iftop
     jq
-    luarocks
     gnumake
     net-tools
     nodejs
@@ -29,13 +27,13 @@
     tmux
     trash-cli
     tree
-    tree-sitter
     v2ray
     vim
     wget
     whois
-    lua
-    lua5_1
     ifstat-legacy
+    bash-language-server
+    lua-language-server
+    pyright
   ];
 }

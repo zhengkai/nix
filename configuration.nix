@@ -7,6 +7,8 @@
   services.spice-vdagentd.enable = true;
   services.xserver.videoDrivers = [ "qxl" ];
 
+  boot.loader.timeout = 0;
+
   # Bootloader.
   boot.loader.grub = {
     enable = true;

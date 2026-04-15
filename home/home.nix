@@ -15,6 +15,7 @@
     GOPATH = config.soulogic.dev.goPath;
     GOBIN = "${config.home.homeDirectory}/.local/bin";
     PIPX_HOME = config.soulogic.dev.pipxPath;
+    NPM_CONFIG_CACHE = "${config.soulogic.dev.path}/npm";
   };
 
   programs.autojump.enable = true;

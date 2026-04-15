@@ -10,6 +10,7 @@ in
   };
 
   config.soulogic.dev = {
+    path = devPath;
     goPath = "${devPath}/go";
     pipxPath = "${devPath}/pipx";
   };
