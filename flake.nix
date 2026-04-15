@@ -13,7 +13,7 @@
         ./configuration.nix
         ./hardware.nix
         ./index.nix
-		./module/system-app.nix
+		./module/system-package.nix
 
         home-manager.nixosModules.home-manager
         {
