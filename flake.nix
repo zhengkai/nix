@@ -25,8 +25,8 @@
         ./module/global.nix
         ./module/ssh.nix
         ./module/system-package.nix
+        ./module/unstable.nix
         ./module/desktop.nix
-        ./module/neovim.nix
 
         home-manager.nixosModules.home-manager
         {

@@ -35,6 +35,7 @@
     wget
     whois
     lua
+    lua5_1
     ifstat-legacy
   ];
 }
