@@ -7,6 +7,9 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+
+    nixpkgs.config.allowUnfree = true;
+
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -14,6 +17,7 @@
         ./hardware.nix
         ./index.nix
 		./module/system-package.nix
+		./module/desktop.nix
 
         home-manager.nixosModules.home-manager
         {
