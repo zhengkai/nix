@@ -5,31 +5,35 @@
     autojump
     cmake
     colordiff
-    editorconfig-core-c
-    go
-    iftop
-    net-tools
-    nodejs
-    silver-searcher
-    tig
-    tmux
-    tree
-    tree-sitter
-    whois
     curl
+    editorconfig-core-c
     fd
     fzf
+    gcc
     git
+    go
     htop
+    iftop
     jq
+    luarocks
+    gnumake
     neovim
+    net-tools
+    nodejs
     php
+    pipx
+    protobuf
     ripgrep
+    silver-searcher
     stderred
+    tig
+    tmux
     trash-cli
+    tree
+    tree-sitter
     v2ray
     vim
     wget
-    python3
+    whois
   ];
 }

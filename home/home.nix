@@ -14,6 +14,7 @@
 
   home.sessionVariables = {
     GOPATH = config.soulogic.dev.goPath;
+    PIPX_HOME = config.soulogic.dev.pipxPath;
   };
 
   programs.autojump.enable = true;

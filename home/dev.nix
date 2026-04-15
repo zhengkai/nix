@@ -2,7 +2,6 @@
 
 let
   devPath = "${config.home.homeDirectory}/dev";
-  goPath = "${devPath}/go";
 in
 {
   options.soulogic.dev = lib.mkOption {
@@ -11,6 +10,7 @@ in
   };
 
   config.soulogic.dev = {
-    goPath = goPath;
+    goPath = "${devPath}/go";
+    pipxPath = "${devPath}/pipx";
   };
 }
