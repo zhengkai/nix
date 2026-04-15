@@ -9,6 +9,16 @@
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/conf/bin"
+    "$HOME/go/bin"
+  ];
+
+  home.sessionVariables = {
+    GOPATH = "${config.home.homeDirectory}/app/go";
+    GOMODCACHE = "${config.home.homeDirectory}/app/go/pkg/mod";
+  };
+
+  home.sessionPath = [
+    "${config.home.homeDirectory}/app/go/bin"
   ];
 
   programs.autojump.enable = true;
