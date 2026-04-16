@@ -25,8 +25,6 @@
         };
         modules = [
 
-          { nixpkgs.config.allowUnfree = true; }
-
           ./configuration.nix
 
           ./host/${name}/configuration.nix
