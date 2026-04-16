@@ -16,9 +16,7 @@
     useOSProber = false;
   };
 
-  # Configure network proxy if necessary
-  networking.proxy.default = "http://192.168.50.207:8118/";
-  networking.proxy.noProxy = "192.168.50.207,127.0.0.1,localhost";
+  networking.hostName = "nixos"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -98,23 +96,6 @@
     spice-vdagent
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-
-  # networking.firewall.enable = false;
   system.stateVersion = "25.11";
 
 }

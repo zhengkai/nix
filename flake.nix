@@ -28,7 +28,10 @@
           { nixpkgs.config.allowUnfree = true; }
 
           ./configuration.nix
-          ./hardware.nix
+
+          ./host/${name}/configuration.nix
+          ./host/${name}/hardware.nix
+
           ./module/global.nix
           ./module/ssh.nix
           ./module/system-package.nix
