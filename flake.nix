@@ -7,40 +7,53 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
+  let
+    hosts = import ./host/list.nix;
 
-    nixpkgs.config.allowUnfree = true;
+    mkHost = { name, desktop ? false, cpp ? false, system ? "x86_64-linux" }:
 
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-      };
-      modules = [
-        ./configuration.nix
-        ./hardware.nix
-        ./module/global.nix
-        ./module/ssh.nix
-        ./module/system-package.nix
-        ./module/unstable.nix
-        ./module/desktop.nix
-        ./module/cpp.nix
+      nixpkgs.lib.nixosSystem {
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.zhengkai = {
-            imports = [
-              ./home/dev.nix
-              ./home/home.nix
-            ];
+        inherit system;
+
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
           };
-        }
-      ];
-    };
+        };
+        modules = [
+
+          { nixpkgs.config.allowUnfree = true; }
+
+          ./configuration.nix
+          ./hardware.nix
+          ./module/global.nix
+          ./module/ssh.nix
+          ./module/system-package.nix
+          ./module/unstable.nix
+          ./module/desktop.nix
+          ./module/cpp.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.zhengkai = {
+              imports = [
+                ./home/dev.nix
+                ./home/home.nix
+              ];
+            };
+          }
+        ];
+      };
+  in
+  {
+    nixosConfigurations = builtins.listToAttrs (map (h: {
+      name = h.name;
+      value = mkHost h;
+    }) hosts);
   };
 }
