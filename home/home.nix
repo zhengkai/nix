@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs,  ... }:
 
 {
   home.stateVersion = "25.11";
@@ -44,5 +44,4 @@
     };
   };
 
-  # programs.neovim.enable = true;
 }

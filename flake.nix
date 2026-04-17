@@ -35,6 +35,7 @@
           ./module/ssh.nix
           ./module/system-package.nix
           ./module/unstable.nix
+          ./module/dotfile.nix
 
           home-manager.nixosModules.home-manager
           {
