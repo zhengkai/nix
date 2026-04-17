@@ -8,6 +8,10 @@
       PermitRootLogin = "no";
       PasswordAuthentication = false;
     };
+
+    extraConfig = ''
+      AcceptEnv LANG LC_* COLORTERM NO_COLOR
+    '';
   };
   networking.firewall.allowedTCPPorts = [ 22 ];
 
