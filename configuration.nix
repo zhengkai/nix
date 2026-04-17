@@ -3,7 +3,6 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-
   boot.loader.timeout = 0;
 
   # Bootloader.
