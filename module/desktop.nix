@@ -23,5 +23,13 @@
       wezterm
       google-chrome
     ];
+
+    programs.dconf.profiles.user.databases = [{
+      settings = {
+        "org/gnome/desktop/screensaver" = {
+          lock-enabled = false;
+        };
+      };
+    }];
   };
 }

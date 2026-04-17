@@ -18,7 +18,7 @@
         inherit system;
 
         specialArgs = {
-          inherit cpp;
+          inherit name;
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;
@@ -35,7 +35,6 @@
           ./module/ssh.nix
           ./module/system-package.nix
           ./module/unstable.nix
-          ./module/desktop.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -49,6 +48,7 @@
             };
           }
         ]
+        ++ nixpkgs.lib.optional desktop ./module/desktop.nix
         ++ nixpkgs.lib.optional cpp ./module/cpp.nix;
       };
   in

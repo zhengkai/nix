@@ -2,6 +2,14 @@
 
 {
 
+  # boot.loader.timeout = 3;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = "surface"; # Define your hostname.
+
+  # common
+
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
     AllowHibernation=no
@@ -9,16 +17,12 @@
     AllowHybridSleep=no
   '';
 
-  # boot.loader.timeout = 3;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  services.displayManager = {
+    enable = true;
+    autoLogin.enable = true;
+    autoLogin.user = "zhengkai";
+  };
 
-  networking.hostName = "surface"; # Define your hostname.
-
-  # Enable CUPS to print documents.
-  #services.printing.enable = true;
-
-  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

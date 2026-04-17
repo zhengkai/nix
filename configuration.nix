@@ -1,9 +1,12 @@
-{ config, pkgs, ... }:
+{ name, config, pkgs, ... }:
 
 {
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader.timeout = 0;
+
+  networking.hostName = name;
 
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
