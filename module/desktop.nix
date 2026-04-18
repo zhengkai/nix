@@ -34,6 +34,24 @@
       variant = "";
     };
 
+    environment.sessionVariables = {
+      XMODIFIERS = "@im=fcitx";
+    };
+
+    i18n.inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5 = {
+        waylandFrontend = true;
+        addons = with pkgs; [
+          qt6Packages.fcitx5-chinese-addons
+          fcitx5-gtk               # GTK 应用支持
+          kdePackages.fcitx5-qt
+          fcitx5-pinyin-zhwiki
+        ];
+      };
+    };
+
     environment.systemPackages = with pkgs; [
       wezterm
       google-chrome
@@ -57,6 +75,13 @@
 
       # 认证弹窗
       polkit_gnome
+
+      qt6.qtwayland
+
+      libxkbcommon
+      xorg.libxcb
+      xcb-util-cursor
+      qt6.qtbase
     ];
   };
 }
