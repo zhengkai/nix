@@ -56,6 +56,9 @@
       wezterm
       google-chrome
 
+      wl-clipboard
+      xclip
+
       # Hyprland 生态
       waybar          # 状态栏
       wofi            # 启动器
@@ -71,7 +74,8 @@
       brightnessctl   # 亮度
 
       # 文件管理（可选）
-      # thunar
+      xfce.thunar
+      nautilus
 
       # 认证弹窗
       polkit_gnome

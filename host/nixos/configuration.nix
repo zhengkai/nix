@@ -4,7 +4,7 @@
 
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
-  services.xserver.videoDrivers = [ "qxl" ];
+  services.xserver.videoDrivers = [ "modesetting" ];
 
   # boot.loader.timeout = 3;
 
@@ -15,10 +15,16 @@
     useOSProber = false;
   };
 
+  boot.kernelParams = [
+    "clocksource=kvm-clock"
+    "no_timer_check"
+  ];
+
   networking.hostName = "nixos"; # Define your hostname.
 
   environment.systemPackages = with pkgs; [
     spice-vdagent
+    wl-clipboard
   ];
 
   # common

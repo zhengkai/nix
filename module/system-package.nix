@@ -41,5 +41,7 @@
     luarocks
     lua5_1
     tree-sitter
+
+    yazi
   ];
 }
