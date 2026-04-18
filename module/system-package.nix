@@ -36,6 +36,8 @@
     lua-language-server
     pyright
 
+    neofetch
+
     luarocks
     lua5_1
     tree-sitter

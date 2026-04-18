@@ -8,9 +8,9 @@
 
   networking.hostName = name;
 
-  services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.xserver.enable = true;
+  # services.displayManager.gdm.enable = true;
+  # services.desktopManager.gnome.enable = true;
 
   networking.proxy.default = "http://192.168.50.207:8118/";
   networking.proxy.noProxy = "192.168.50.207,127.0.0.1,localhost";

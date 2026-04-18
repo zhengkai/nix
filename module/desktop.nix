@@ -7,12 +7,27 @@
 
   config = lib.mkIf config.soulogic.desktop.enable {
 
-    # programs.firefox.enable = true;
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
 
-    # services.printing.enable = true;
+    services.greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "Hyprland";
+          user = "zhengkai";
+        };
+      };
+    };
+    security.pam.services.hyprlock.enable = false;
+    services.getty.autologinUser = "zhengkai";
 
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
+    systemd.targets.sleep.enable = false;
+    systemd.targets.suspend.enable = false;
+    systemd.targets.hibernate.enable = false;
+    systemd.targets.hybrid-sleep.enable = false;
 
     services.xserver.xkb = {
       layout = "us";
@@ -22,14 +37,26 @@
     environment.systemPackages = with pkgs; [
       wezterm
       google-chrome
-    ];
 
-    programs.dconf.profiles.user.databases = [{
-      settings = {
-        "org/gnome/desktop/screensaver" = {
-          lock-enabled = false;
-        };
-      };
-    }];
+      # Hyprland 生态
+      waybar          # 状态栏
+      wofi            # 启动器
+      hyprpaper       # 壁纸
+      mako            # 通知
+      hyprlock        # 锁屏
+      hypridle        # 空闲管理
+
+      # 工具
+      grim            # 截图
+      wl-clipboard    # 剪贴板
+      cliphist        # 剪贴板历史
+      brightnessctl   # 亮度
+
+      # 文件管理（可选）
+      # thunar
+
+      # 认证弹窗
+      polkit_gnome
+    ];
   };
 }
