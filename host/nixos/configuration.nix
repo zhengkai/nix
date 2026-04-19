@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
 {
   imports = [
@@ -23,8 +23,6 @@
     "no_timer_check"
   ];
 
-  networking.hostName = "nixos"; # Define your hostname.
-
   environment.systemPackages = with pkgs; [
     spice-vdagent
     wl-clipboard
@@ -42,7 +40,7 @@
   services.displayManager = {
     enable = true;
     autoLogin.enable = true;
-    autoLogin.user = "zhengkai";
+    autoLogin.user = user;
   };
 
   services.pulseaudio.enable = false;

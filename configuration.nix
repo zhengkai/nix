@@ -68,9 +68,6 @@
     isNormalUser = true;
     description = "Zheng Kai";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
   };
 
   nixpkgs.config.allowUnfree = true;

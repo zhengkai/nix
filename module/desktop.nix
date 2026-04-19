@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, user, ... }:
 
 {
   imports = [
@@ -17,12 +17,12 @@
       settings = {
         default_session = {
           command = "Hyprland";
-          user = "zhengkai";
+          user = user;
         };
       };
     };
     security.pam.services.hyprlock.enable = false;
-    services.getty.autologinUser = "zhengkai";
+    services.getty.autologinUser = user;
 
     systemd.targets.sleep.enable = false;
     systemd.targets.suspend.enable = false;

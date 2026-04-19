@@ -1,12 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
 {
 
   # boot.loader.timeout = 3;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "surface"; # Define your hostname.
 
   # common
 
@@ -20,7 +18,7 @@
   services.displayManager = {
     enable = true;
     autoLogin.enable = true;
-    autoLogin.user = "zhengkai";
+    autoLogin.user = user;
   };
 
   services.pulseaudio.enable = false;

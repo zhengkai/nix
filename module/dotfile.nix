@@ -5,10 +5,10 @@ let
 in
 {
   system.activationScripts.cloneDotfile.text = ''
-    export USER="zhengkai"
+    export USER="${name}"
     export SUDO="${pkgs.sudo}/bin/sudo"
     export GIT="${pkgs.git}/bin/git"
-    export UHOME="/home/zhengkai"
+    export UHOME="/home/${name}"
 
     ${script}
   '';

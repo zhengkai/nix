@@ -19,6 +19,7 @@
 
         specialArgs = {
           inherit name;
+          user = "zhengkai";
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;
