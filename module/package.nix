@@ -15,6 +15,7 @@
     iftop
     jq
     gnumake
+    lsb-release
     net-tools
     nodejs
     php

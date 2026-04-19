@@ -33,7 +33,7 @@
 
           ./module/global.nix
           ./module/ssh.nix
-          ./module/system-package.nix
+          ./module/package.nix
           ./module/unstable.nix
           ./module/dotfile.nix
 

@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./package.nix
+  ];
 
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
