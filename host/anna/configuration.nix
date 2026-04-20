@@ -4,6 +4,7 @@
 
   imports = [
     ./kvm.nix
+    ./v2ray.nix
   ];
 
 

@@ -3,7 +3,12 @@
 let
   devPath = "${config.home.homeDirectory}/dev";
 in
-{
+  {
+  imports = [
+    ./chrome.nix
+  ];
+
+
   options.soulogic.dev = lib.mkOption {
     type = lib.types.attrsOf lib.types.str;
     default = {};
