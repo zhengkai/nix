@@ -19,7 +19,9 @@
     jq
     lsb-release
     lua-language-server
+    neofetch
     net-tools
+    networkmanagerapplet
     nodejs
     php
     pipx
@@ -38,8 +40,6 @@
     wget
     whois
     zip
-
-    neofetch
 
     luarocks
     lua5_1

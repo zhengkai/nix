@@ -2,12 +2,14 @@ if [ -z "$UHOME" ]; then
 	exit
 fi
 
+echo "UHOME = $UHOME"
+
 run_clone() {
 	REPO_URL="$1"
 	TARGET_DIR="${UHOME}/$2"
 	BRANCH="${3:-master}"
 
-	echo "$REPO_URL"
+	echo "$REPO_URL" "$TARGET_DIR"
 
 	if [ ! -d "$TARGET_DIR" ]; then
 		"$SUDO" -u "$USER" GIT_CONFIG_GLOBAL=/dev/null "$GIT" clone \

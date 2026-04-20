@@ -10,6 +10,10 @@
         source-sans
         source-serif
         jetbrains-mono
+
+        font-awesome
+        roboto
+        nerd-fonts.jetbrains-mono
       ];
 
       fontconfig = {
