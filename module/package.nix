@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     autojump
+    bash-language-server
     colordiff
     curl
     editorconfig-core-c
@@ -10,17 +11,20 @@
     fzf
     gcc
     git
+    gnumake
     go
     htop
+    ifstat-legacy
     iftop
     jq
-    gnumake
     lsb-release
+    lua-language-server
     net-tools
     nodejs
     php
     pipx
     protobuf
+    pyright
     ripgrep
     silver-searcher
     stderred
@@ -28,14 +32,12 @@
     tmux
     trash-cli
     tree
+    unzip
     v2ray
     vim
     wget
     whois
-    ifstat-legacy
-    bash-language-server
-    lua-language-server
-    pyright
+    zip
 
     neofetch
 
