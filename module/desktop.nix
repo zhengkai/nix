@@ -74,7 +74,7 @@
       brightnessctl   # 亮度
 
       # 文件管理（可选）
-      xfce.thunar
+      thunar
       nautilus
 
       # 认证弹窗
@@ -83,7 +83,7 @@
       qt6.qtwayland
 
       libxkbcommon
-      xorg.libxcb
+      libxcb
       xcb-util-cursor
       qt6.qtbase
     ];

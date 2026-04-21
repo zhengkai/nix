@@ -69,8 +69,33 @@
     description = "Zheng Kai";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+# configuration.nix
+programs.hyprland = {
+  enable = true;
+  # 如果你使用 NVIDIA 显卡：
+  # withUWSM = true;
+    withUWSM = true;
+};
+
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Intel 显卡驱动
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver    # iHD driver（VA-API 硬件加速）
+      vpl-gpu-rt           # Intel Video Processing Library
+    ];
+  };
+
+  # 确保使用正确的 Vulkan 驱动
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
+
 
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }

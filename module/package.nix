@@ -19,7 +19,6 @@
     jq
     lsb-release
     lua-language-server
-    neofetch
     net-tools
     networkmanagerapplet
     nodejs

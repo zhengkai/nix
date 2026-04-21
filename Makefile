@@ -1,4 +1,7 @@
 SHELL:=/usr/bin/env bash
 
-build:
+switch:
 	sudo nixos-rebuild switch --flake .
+
+boot:
+	sudo nixos-rebuild boot --flake .
