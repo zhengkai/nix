@@ -5,7 +5,7 @@ let
 in
   {
   imports = [
-    ./chrome.nix
+    # ./chrome.nix
   ];
 
 

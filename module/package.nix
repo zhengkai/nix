@@ -8,6 +8,7 @@
     curl
     editorconfig-core-c
     fd
+    fortune
     fzf
     gcc
     git

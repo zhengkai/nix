@@ -7,9 +7,12 @@
 
   config = lib.mkIf config.soulogic.desktop.enable {
 
+    services.dbus.enable = true;
+
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
+      systemd.setPath.enable = true;
     };
 
     services.greetd = {
@@ -76,6 +79,10 @@
       # 文件管理（可选）
       thunar
       nautilus
+
+      adwaita-icon-theme
+      hicolor-icon-theme
+      gnome-themes-extra
 
       # 认证弹窗
       polkit_gnome
