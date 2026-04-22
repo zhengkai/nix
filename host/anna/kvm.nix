@@ -13,7 +13,7 @@
   programs.dconf.enable = true;
   security.polkit.enable = true;
 
-  users.users.zhengkai.extraGroups = [ "libvirtd" "kvm" "input" ];
+  users.users.zhengkai.extraGroups = [ "libvirtd" "kvm" "input" "www-data" ];
 
   environment.systemPackages = with pkgs; [
     virt-manager
@@ -22,6 +22,7 @@
     spice-gtk
     virtio-win         # Windows virtio 驱动 ISO
     polkit_gnome
+    looking-glass-client
   ];
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {

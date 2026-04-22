@@ -8,5 +8,8 @@
     foot
     nginx
     gvfs
+
+    vlc
+    jxrlib
   ];
 }

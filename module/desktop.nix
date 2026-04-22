@@ -77,8 +77,11 @@
       brightnessctl   # 亮度
 
       # 文件管理（可选）
-      thunar
       nautilus
+      file-roller
+      unzip
+      zip
+      p7zip
 
       adwaita-icon-theme
       hicolor-icon-theme

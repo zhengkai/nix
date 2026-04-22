@@ -7,21 +7,17 @@
     ./v2ray.nix
     ./package.nix
     ./nginx.nix
+    ./samba.nix
   ];
-
-
-  # services.qemuGuest.enable = true;
-  # services.spice-vdagentd.enable = true;
-  # services.xserver.videoDrivers = [ "modesetting" ];
 
   boot.loader.timeout = 3;
 
   # Bootloader.
-#  boot.loader.grub = {
-#    enable = true;
-#    device = "/dev/vda";
-#    useOSProber = true;
-#  };
+  #  boot.loader.grub = {
+  #    enable = true;
+  #    device = "/dev/vda";
+  #    useOSProber = true;
+  #  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
