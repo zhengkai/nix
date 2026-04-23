@@ -40,6 +40,7 @@
     wget
     whois
     zip
+    brotli
 
     luarocks
     lua5_1

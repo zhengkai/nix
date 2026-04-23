@@ -8,6 +8,7 @@
   config = lib.mkIf config.soulogic.desktop.enable {
 
     services.dbus.enable = true;
+    security.polkit.enable = true;
 
     programs.hyprland = {
       enable = true;
@@ -72,9 +73,16 @@
 
       # 工具
       grim            # 截图
+      hyprshot
+      slurp
+      satty
       wl-clipboard    # 剪贴板
       cliphist        # 剪贴板历史
       brightnessctl   # 亮度
+
+      imagemagick
+
+      loupe
 
       # 文件管理（可选）
       nautilus
@@ -82,6 +90,8 @@
       unzip
       zip
       p7zip
+
+      gparted
 
       adwaita-icon-theme
       hicolor-icon-theme
@@ -97,5 +107,29 @@
       xcb-util-cursor
       qt6.qtbase
     ];
+
+    xdg.mime = {
+      enable = true;
+      defaultApplications = {
+        "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
+        "image/png" = [ "org.gnome.Loupe.desktop" ];
+        "image/gif" = [ "org.gnome.Loupe.desktop" ];
+        "image/webp" = [ "org.gnome.Loupe.desktop" ];
+        "image/bmp" = [ "org.gnome.Loupe.desktop" ];
+        "image/tiff" = [ "org.gnome.Loupe.desktop" ];
+        "image/svg+xml" = [ "org.gnome.Loupe.desktop" ];
+        "image/avif" = [ "org.gnome.Loupe.desktop" ];
+        "image/heif" = [ "org.gnome.Loupe.desktop" ];
+        "image/heic" = [ "org.gnome.Loupe.desktop" ];
+        "image/x-portable-bitmap" = [ "org.gnome.Loupe.desktop" ];
+        "image/x-portable-graymap" = [ "org.gnome.Loupe.desktop" ];
+        "image/x-portable-pixmap" = [ "org.gnome.Loupe.desktop" ];
+        "image/x-portable-anymap" = [ "org.gnome.Loupe.desktop" ];
+        "image/x-xbitmap" = [ "org.gnome.Loupe.desktop" ];
+        "image/x-xpixmap" = [ "org.gnome.Loupe.desktop" ];
+        "image/vnd.microsoft.icon" = [ "org.gnome.Loupe.desktop" ];
+        "image/x-icon" = [ "org.gnome.Loupe.desktop" ];
+      };
+    };
   };
 }
