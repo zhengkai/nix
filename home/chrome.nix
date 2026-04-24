@@ -31,6 +31,9 @@
 
           echo "Sending SIGTERM to Chrome/Chromium..."
 
+          (
+
+
           # 向 chrome/chromium 发送 SIGTERM
           pkill -TERM -f "(chrome|chromium)" 2>/dev/null || {
             echo "No Chrome/Chromium process found, nothing to do."
@@ -48,6 +51,8 @@
 
           echo "Chrome/Chromium still running after timeout, force killing..."
           pkill -KILL -f "(chrome|chromium)" 2>/dev/null || true
+
+          ) >/log/chrome.txt
         '';
       in toString stopScript;
 

@@ -5,65 +5,72 @@
     ./font.nix
   ];
 
-  config = lib.mkIf config.soulogic.desktop.enable {
 
-    services.dbus.enable = true;
-    security.polkit.enable = true;
+  services.dbus.enable = true;
+  security.polkit.enable = true;
 
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      systemd.setPath.enable = true;
-    };
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    systemd.setPath.enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+# permissions = [
+#   "${grimPath}, screencopy, allow"
+# ];
+  };
 
-    services.greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "Hyprland";
-          user = user;
-        };
+  services.greetd = {
+    enable = true;
+    settings = {
+      initial_session = {
+        command = "start-hyprland";
+        user = user;
+      };
+      default_session = {
+        command = "start-hyprland";
+        user = user;
       };
     };
-    security.pam.services.hyprlock.enable = false;
-    services.getty.autologinUser = user;
+  };
+  security.pam.services.hyprlock.enable = false;
+  services.getty.autologinUser = user;
 
-    systemd.targets.sleep.enable = false;
-    systemd.targets.suspend.enable = false;
-    systemd.targets.hibernate.enable = false;
-    systemd.targets.hybrid-sleep.enable = false;
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
 
-    services.xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 
-    environment.sessionVariables = {
-      XMODIFIERS = "@im=fcitx";
-    };
+  environment.sessionVariables = {
+    XMODIFIERS = "@im=fcitx";
+  };
 
-    i18n.inputMethod = {
-      enable = true;
-      type = "fcitx5";
-      fcitx5 = {
-        waylandFrontend = true;
-        addons = with pkgs; [
-          qt6Packages.fcitx5-chinese-addons
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        qt6Packages.fcitx5-chinese-addons
           fcitx5-gtk               # GTK 应用支持
           kdePackages.fcitx5-qt
           fcitx5-pinyin-zhwiki
-        ];
-      };
+      ];
     };
+  };
 
-    environment.systemPackages = with pkgs; [
-      wezterm
+  environment.systemPackages = with pkgs; [
+    wezterm
       google-chrome
 
       wl-clipboard
       xclip
 
-      # Hyprland 生态
+# Hyprland 生态
       waybar          # 状态栏
       wofi            # 启动器
       hyprpaper       # 壁纸
@@ -71,7 +78,7 @@
       hyprlock        # 锁屏
       hypridle        # 空闲管理
 
-      # 工具
+# 工具
       grim            # 截图
       hyprshot
       slurp
@@ -82,9 +89,11 @@
 
       imagemagick
 
-      loupe
+      loupe # 图片查看
 
-      # 文件管理（可选）
+      gnome-font-viewer
+
+# 文件管理（可选）
       nautilus
       file-roller
       unzip
@@ -97,7 +106,7 @@
       hicolor-icon-theme
       gnome-themes-extra
 
-      # 认证弹窗
+# 认证弹窗
       polkit_gnome
 
       qt6.qtwayland
@@ -106,30 +115,34 @@
       libxcb
       xcb-util-cursor
       qt6.qtbase
-    ];
 
-    xdg.mime = {
-      enable = true;
-      defaultApplications = {
-        "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
-        "image/png" = [ "org.gnome.Loupe.desktop" ];
-        "image/gif" = [ "org.gnome.Loupe.desktop" ];
-        "image/webp" = [ "org.gnome.Loupe.desktop" ];
-        "image/bmp" = [ "org.gnome.Loupe.desktop" ];
-        "image/tiff" = [ "org.gnome.Loupe.desktop" ];
-        "image/svg+xml" = [ "org.gnome.Loupe.desktop" ];
-        "image/avif" = [ "org.gnome.Loupe.desktop" ];
-        "image/heif" = [ "org.gnome.Loupe.desktop" ];
-        "image/heic" = [ "org.gnome.Loupe.desktop" ];
-        "image/x-portable-bitmap" = [ "org.gnome.Loupe.desktop" ];
-        "image/x-portable-graymap" = [ "org.gnome.Loupe.desktop" ];
-        "image/x-portable-pixmap" = [ "org.gnome.Loupe.desktop" ];
-        "image/x-portable-anymap" = [ "org.gnome.Loupe.desktop" ];
-        "image/x-xbitmap" = [ "org.gnome.Loupe.desktop" ];
-        "image/x-xpixmap" = [ "org.gnome.Loupe.desktop" ];
-        "image/vnd.microsoft.icon" = [ "org.gnome.Loupe.desktop" ];
-        "image/x-icon" = [ "org.gnome.Loupe.desktop" ];
-      };
+      alsa-utils
+      libpulseaudio
+      wireplumber
+      pavucontrol
+      ];
+
+  xdg.mime = {
+    enable = true;
+    defaultApplications = {
+      "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
+      "image/png" = [ "org.gnome.Loupe.desktop" ];
+      "image/gif" = [ "org.gnome.Loupe.desktop" ];
+      "image/webp" = [ "org.gnome.Loupe.desktop" ];
+      "image/bmp" = [ "org.gnome.Loupe.desktop" ];
+      "image/tiff" = [ "org.gnome.Loupe.desktop" ];
+      "image/svg+xml" = [ "org.gnome.Loupe.desktop" ];
+      "image/avif" = [ "org.gnome.Loupe.desktop" ];
+      "image/heif" = [ "org.gnome.Loupe.desktop" ];
+      "image/heic" = [ "org.gnome.Loupe.desktop" ];
+      "image/x-portable-bitmap" = [ "org.gnome.Loupe.desktop" ];
+      "image/x-portable-graymap" = [ "org.gnome.Loupe.desktop" ];
+      "image/x-portable-pixmap" = [ "org.gnome.Loupe.desktop" ];
+      "image/x-portable-anymap" = [ "org.gnome.Loupe.desktop" ];
+      "image/x-xbitmap" = [ "org.gnome.Loupe.desktop" ];
+      "image/x-xpixmap" = [ "org.gnome.Loupe.desktop" ];
+      "image/vnd.microsoft.icon" = [ "org.gnome.Loupe.desktop" ];
+      "image/x-icon" = [ "org.gnome.Loupe.desktop" ];
     };
   };
 }

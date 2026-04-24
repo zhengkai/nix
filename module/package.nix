@@ -41,6 +41,8 @@
     whois
     zip
     brotli
+    btop
+    tty-clock
 
     luarocks
     lua5_1

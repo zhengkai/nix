@@ -5,3 +5,7 @@ switch:
 
 boot:
 	sudo nixos-rebuild boot --flake .
+
+update:
+	nix flake update
+	sudo nixos-rebuild switch --flake .

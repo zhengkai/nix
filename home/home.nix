@@ -34,7 +34,7 @@
       source ~/conf/zsh/index.zsh
       source ${pkgs.fzf}/share/fzf/key-bindings.zsh
       source ${pkgs.fzf}/share/fzf/completion.zsh
-      bindkey '^P' fzf-file-widget
+      bindkey '^P' fzf-git-widget
     '';
   };
 

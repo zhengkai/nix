@@ -46,7 +46,11 @@
               imports = [
                 ./home/dev.nix
                 ./home/home.nix
-              ];
+              ] ++ (if desktop then
+              [
+                ./home/desktop.nix
+                ./home/chrome.nix
+              ] else []);
             };
           }
         ]

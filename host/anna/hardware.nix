@@ -17,6 +17,9 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
   boot.kernelModules = [ "kvm-amd" "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
+  boot.extraModprobeConfig = ''
+    options vfio-pci ids=8086:e20b,8086:e2f7
+  '';
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
