@@ -67,7 +67,6 @@
     wezterm
       google-chrome
 
-      wl-clipboard
       xclip
 
 # Hyprland 生态
@@ -86,6 +85,7 @@
       wl-clipboard    # 剪贴板
       cliphist        # 剪贴板历史
       brightnessctl   # 亮度
+      rofi
 
       imagemagick
 

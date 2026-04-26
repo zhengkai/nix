@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
     autojump
     bash-language-server
+    brotli
+    btop
     colordiff
     curl
     editorconfig-core-c
@@ -25,6 +27,7 @@
     nodejs
     php
     pipx
+    plocate
     protobuf
     pyright
     ripgrep
@@ -34,15 +37,14 @@
     tmux
     trash-cli
     tree
+    tty-clock
+    typescript-language-server
     unzip
     v2ray
     vim
     wget
     whois
     zip
-    brotli
-    btop
-    tty-clock
 
     luarocks
     lua5_1
