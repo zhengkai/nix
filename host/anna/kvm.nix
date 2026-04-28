@@ -13,7 +13,7 @@
   programs.dconf.enable = true;
   security.polkit.enable = true;
 
-  users.users.zhengkai.extraGroups = [ "libvirtd" "kvm" "input" "www-data" ];
+  users.users.zhengkai.extraGroups = [ "libvirtd" "kvm" "input" "log" ];
 
   environment.systemPackages = with pkgs; [
     virt-manager

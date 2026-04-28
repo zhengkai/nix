@@ -5,31 +5,42 @@
     nginx
   ];
 
-  users.users.www-data = {
+  users.groups.nginx = {};
+  users.groups.log = {};
+
+  users.users.nginx = {
     isSystemUser = true;
-    group = "www-data";
+    group = "nginx";
+    extraGroups = [ "log" ];
   };
-  users.groups.www-data = {};
 
   services.nginx = {
     enable = true;
-    user = "www-data";
-    group = "www-data";
+    user = "nginx";
+    group = "nginx";
 
-    # 将配置根目录指向 /etc/nginx
-    appendConfig = ''
-      # 你的全局配置
-    '';
+# 将配置根目录指向 /etc/nginx
+# appendConfig = ''
+# include /work/memoria/nginx/dev.conf;
+# '';
 
-    virtualHosts."example.com" = {
-      root = "/www/example.com";
-      listen = [{ addr = "0.0.0.0"; port = 80; }];
+    virtualHosts."anna.9farm.com" = {
+      addSSL = true;
+      sslCertificate = "/repo/cert/anna.9farm.com.crt";
+      sslCertificateKey = "/repo/cert/anna.9farm.com.key";
+      listen = [
+      { addr = "[::]"; port = 80; extraParameters = [ "default_server" "ipv6only=off" ]; }
+      { addr = "[::]"; port = 443; ssl = true; extraParameters = [ "default_server" "ipv6only=off" ]; }
+      ];
       locations."/" = {
-        index = "index.html";
+        extraConfig = ''
+          default_type text/plain;
+          return 200 "Anna $remote_addr";
+        '';
       };
     };
   };
 
-  # 开放防火墙端口
+# 开放防火墙端口
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 }

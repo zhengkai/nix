@@ -56,3 +56,8 @@ link() {
 link "conf/dotfiles/gitconfig" ".gitconfig"
 link "conf/dotfiles/other/tigrc" ".config/tig/config"
 link "conf/waybar" ".config/waybar"
+
+if [ -e "/run/current-system/sw/bin/hyprland" ]; then
+	link "conf/hypr/other/hyprland.conf" ".config/hypr/hyprland.conf"
+	link "conf/hypr/other/hypridle.conf" ".config/hypr/hypridle.conf"
+fi

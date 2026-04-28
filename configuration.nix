@@ -13,7 +13,7 @@
   # services.desktopManager.gnome.enable = true;
 
   networking.proxy.default = "http://192.168.50.207:8118/";
-  networking.proxy.noProxy = "192.168.50.207,127.0.0.1,localhost";
+  networking.proxy.noProxy = "192.168.50.207,127.0.0.1,localhost,anna.9farm.com";
 
   networking.hosts = {
     "192.168.50.184" = [ "anna" ];

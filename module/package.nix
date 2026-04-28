@@ -13,6 +13,7 @@
     fortune
     fzf
     gcc
+    geoip
     git
     gnumake
     go
@@ -41,6 +42,7 @@
     typescript-language-server
     unzip
     v2ray
+    v2ray-geoip
     vim
     wget
     whois
