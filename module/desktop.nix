@@ -5,9 +5,10 @@
     ./font.nix
   ];
 
-
   services.dbus.enable = true;
   security.polkit.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
 
   programs.hyprland = {
     enable = true;
@@ -87,6 +88,9 @@
       brightnessctl   # 亮度
       rofi
 
+      walker
+      elephant
+
       imagemagick
 
       loupe # 图片查看
@@ -101,6 +105,9 @@
       p7zip
 
       gparted
+
+      libsecret
+      seahorse
 
       adwaita-icon-theme
       hicolor-icon-theme

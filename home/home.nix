@@ -46,4 +46,18 @@
     };
   };
 
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+
+    download = "/share";
+
+    desktop = "${config.home.homeDirectory}/.xdg/Desktop";
+    documents = "${config.home.homeDirectory}/.xdg/Documents";
+    music = "${config.home.homeDirectory}/.xdg/Music";
+    pictures = "${config.home.homeDirectory}/.xdg/Pictures";
+    publicShare = "${config.home.homeDirectory}/.xdg/Public";
+    templates = "${config.home.homeDirectory}/.xdg/Templates";
+    videos = "${config.home.homeDirectory}/.xdg/Videos";
+  };
 }

@@ -16,7 +16,7 @@
   networking.proxy.noProxy = "192.168.50.207,127.0.0.1,localhost";
 
   networking.hosts = {
-    "192.168.50.182" = [ "anna" ];
+    "192.168.50.184" = [ "anna" ];
     "192.168.50.63" = [ "surface" ];
     "192.168.50.207" = [ "tanya" ];
     "67.230.183.120" = [ "freya" ];
