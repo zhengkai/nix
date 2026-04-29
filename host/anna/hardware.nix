@@ -22,6 +22,11 @@
   '';
   boot.extraModulePackages = [ ];
 
+  # 禁用 usb 设备唤醒
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{power/wakeup}="disabled"
+  '';
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3484d2dd-6350-4af5-a8f3-d8ca330a08ab";
       fsType = "ext4";
