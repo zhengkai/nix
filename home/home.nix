@@ -8,6 +8,7 @@
   home.homeDirectory = "/home/zhengkai";
 
   home.sessionPath = [
+    "${config.home.homeDirectory}/dev/venvs/default/bin"
     "${config.home.homeDirectory}/.local/bin"
     "${config.home.homeDirectory}/conf/bin"
   ];

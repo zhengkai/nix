@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [
+    ./memoria.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     nginx
   ];
@@ -19,11 +24,6 @@
     user = "nginx";
     group = "nginx";
 
-# 将配置根目录指向 /etc/nginx
-# appendConfig = ''
-# include /work/memoria/nginx/dev.conf;
-# '';
-
     virtualHosts."anna.9farm.com" = {
       addSSL = true;
       sslCertificate = "/repo/cert/anna.9farm.com.crt";
@@ -41,6 +41,5 @@
     };
   };
 
-# 开放防火墙端口
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 }

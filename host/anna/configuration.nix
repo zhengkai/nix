@@ -6,7 +6,7 @@
     ./kvm.nix
     ./v2ray.nix
     ./package.nix
-    ./nginx.nix
+    ./nginx/index.nix
     ./samba.nix
   ];
 

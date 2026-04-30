@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    autoPatchelfHook
     autojump
     bash-language-server
     brotli
@@ -20,17 +21,20 @@
     htop
     ifstat-legacy
     iftop
+    inetutils
     jq
     lsb-release
     lua-language-server
     net-tools
     networkmanagerapplet
+    nmap
     nodejs
-    php
+    npm-check-updates
     pipx
     plocate
     protobuf
     pyright
+    python3
     ripgrep
     silver-searcher
     stderred
@@ -53,5 +57,11 @@
     tree-sitter
 
     yazi
+
+    (php.buildEnv {
+      extraConfig = ''
+      date.timezone = Asia/Shanghai
+      '';
+    })
   ];
 }
