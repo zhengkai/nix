@@ -8,7 +8,6 @@ in
     # ./chrome.nix
   ];
 
-
   options.soulogic.dev = lib.mkOption {
     type = lib.types.attrsOf lib.types.str;
     default = {};
@@ -18,5 +17,6 @@ in
     path = devPath;
     goPath = "${devPath}/go";
     pipxPath = "${devPath}/pipx";
+    venvPath = "${devPath}/venv";
   };
 }

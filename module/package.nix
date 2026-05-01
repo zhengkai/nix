@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    aegisub
     autoPatchelfHook
     autojump
     bash-language-server
@@ -11,6 +12,7 @@
     curl
     editorconfig-core-c
     fd
+    ffmpeg
     fortune
     fzf
     gcc
@@ -24,6 +26,7 @@
     inetutils
     jq
     lsb-release
+    lsof
     lua-language-server
     net-tools
     networkmanagerapplet
@@ -33,6 +36,7 @@
     pipx
     plocate
     protobuf
+    psmisc
     pyright
     python3
     ripgrep
@@ -45,6 +49,7 @@
     tty-clock
     typescript-language-server
     unzip
+    usbutils
     v2ray
     v2ray-geoip
     vim
