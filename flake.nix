@@ -27,6 +27,7 @@
         };
         modules = [
 
+          ./build-label.nix
           ./configuration.nix
 
           ./host/${name}/configuration.nix

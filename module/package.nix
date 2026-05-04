@@ -3,11 +3,14 @@
 {
   environment.systemPackages = with pkgs; [
     aegisub
+    asciidoctor
     autoPatchelfHook
     autojump
     bash-language-server
     brotli
     btop
+    cmark
+    cmark-gfm
     colordiff
     curl
     editorconfig-core-c
@@ -25,6 +28,7 @@
     iftop
     inetutils
     jq
+    libsecret.dev
     lsb-release
     lsof
     lua-language-server

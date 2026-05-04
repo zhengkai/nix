@@ -27,6 +27,17 @@
     ACTION=="add", SUBSYSTEM=="usb", ATTR{power/wakeup}="disabled"
   '';
 
+  fileSystems."/mnt/ntfs" = {
+    device = "/dev/disk/by-uuid/DC2AD3202AD2F68C";
+    fsType = "ntfs";
+    options = [
+      "rw" "uid=1000" "gid=100" "umask=022"
+      "nofail"        # 挂载失败不阻塞启动
+      "x-systemd.device-timeout=5s" # 最多等待 5 秒
+      "x-systemd.automount"         # 按需自动挂载（访问时才挂）
+    ];
+  };
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3484d2dd-6350-4af5-a8f3-d8ca330a08ab";
       fsType = "ext4";

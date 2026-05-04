@@ -1,6 +1,7 @@
 SHELL:=/usr/bin/env bash
 
 switch:
+	./script/build-label.sh
 	sudo nixos-rebuild switch --flake .
 
 boot:
