@@ -19,10 +19,12 @@
   #    useOSProber = true;
   #  };
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 30;
+    sortKey = "z-nixos"; # 让 win11 排在前面
+  };
   boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.loader.systemd-boot.sortKey = "z-nixos"; # 让 win11 排在前面
 
   # common
 
