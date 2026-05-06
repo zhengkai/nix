@@ -22,6 +22,10 @@
       proxyPass = "http://127.0.0.1:22709";
     };
 
+    locations."/public/" = {
+      proxyPass = "http://127.0.0.1:22709/";
+    };
+
     locations."/node_modules/.vite/deps" = {
       proxyPass = "http://127.0.0.1:22708";
     };

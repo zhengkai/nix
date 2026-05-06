@@ -32,6 +32,7 @@
     lsb-release
     lsof
     lua-language-server
+    mkvtoolnix
     net-tools
     networkmanagerapplet
     nmap
@@ -55,6 +56,7 @@
     unzip
     usbutils
     v2ray
+    v2ray-domain-list-community
     v2ray-geoip
     vim
     wget
