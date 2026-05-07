@@ -21,7 +21,18 @@
     locations."/api" = {
       proxyPass = "http://127.0.0.1:22709";
     };
-
+    locations."/inter-file/" = {
+      alias = "/work/memoria/static/file/";
+      extraConfig = ''
+        internal;
+      '';
+    };
+    locations."/inter-page/" = {
+      alias = "/work/memoria/static/page/";
+      extraConfig = ''
+        internal;
+      '';
+    };
     locations."/file" = {
       proxyPass = "http://127.0.0.1:22709";
     };
@@ -29,6 +40,12 @@
       proxyPass = "http://127.0.0.1:22709/";
       extraConfig = ''
         proxy_set_header X-Forwarded-Proto https;
+      '';
+    };
+    locations."/public-http/" = {
+      proxyPass = "http://127.0.0.1:22709/";
+      extraConfig = ''
+        proxy_set_header X-Forwarded-Proto http;
       '';
     };
 
