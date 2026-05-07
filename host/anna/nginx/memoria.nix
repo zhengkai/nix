@@ -22,8 +22,14 @@
       proxyPass = "http://127.0.0.1:22709";
     };
 
+    locations."/file" = {
+      proxyPass = "http://127.0.0.1:22709";
+    };
     locations."/public/" = {
       proxyPass = "http://127.0.0.1:22709/";
+      extraConfig = ''
+        proxy_set_header X-Forwarded-Proto https;
+      '';
     };
 
     locations."/node_modules/.vite/deps" = {
