@@ -13,10 +13,10 @@
       { addr = "[::]"; port = 80; }
       { addr = "[::]"; port = 443; ssl = true; }
     ];
-    # extraConfig = ''
-    #   access_log /log/memoria/access.log;
-    #   error_log  /log/memoria/error.log;
-    # '';
+    extraConfig = ''
+      access_log /tmp/memoria-access.log;
+      error_log  /tmp/memoria-error.log;
+    '';
 
     locations."/api" = {
       proxyPass = "http://127.0.0.1:22709";
@@ -25,16 +25,23 @@
       alias = "/work/memoria/static/file/";
       extraConfig = ''
         internal;
+        etag off;
+        add_header ETag $upstream_http_etag;
       '';
     };
     locations."/inter-page/" = {
       alias = "/work/memoria/static/page/";
       extraConfig = ''
         internal;
+        etag off;
+        add_header ETag $upstream_http_etag;
       '';
     };
     locations."/file" = {
       proxyPass = "http://127.0.0.1:22709";
+      extraConfig = ''
+        proxy_set_header X-Forwarded-Proto https;
+      '';
     };
     locations."/public/" = {
       proxyPass = "http://127.0.0.1:22709/";
@@ -72,8 +79,27 @@
       '';
     };
 
+    locations."= /public/favicon.webp" = {
+      extraConfig = ''
+        alias /work/memoria/public/favicon.webp;
+        expires max;
+        access_log off;
+        log_not_found off;
+      '';
+    };
+
+    locations."= /public/favicon.ico" = {
+      extraConfig = ''
+        alias /work/memoria/public/favicon.webp;
+        expires max;
+        access_log off;
+        log_not_found off;
+      '';
+    };
+
     locations."= /favicon.ico" = {
       extraConfig = ''
+        alias /work/memoria/public/favicon.ico;
         expires max;
         access_log off;
         log_not_found off;
