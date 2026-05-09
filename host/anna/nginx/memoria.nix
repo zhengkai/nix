@@ -21,22 +21,6 @@
     locations."/api" = {
       proxyPass = "http://127.0.0.1:22709";
     };
-    locations."/inter-file/" = {
-      alias = "/work/memoria/static/file/";
-      extraConfig = ''
-        internal;
-        etag off;
-        add_header ETag $upstream_http_etag;
-      '';
-    };
-    locations."/inter-page/" = {
-      alias = "/work/memoria/static/page/";
-      extraConfig = ''
-        internal;
-        etag off;
-        add_header ETag $upstream_http_etag;
-      '';
-    };
     locations."/file" = {
       proxyPass = "http://127.0.0.1:22709";
       extraConfig = ''

@@ -46,6 +46,7 @@
     python3
     ripgrep
     silver-searcher
+    socat
     stderred
     tig
     tmux
