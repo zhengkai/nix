@@ -9,6 +9,7 @@
     forceSSL = true;
     sslCertificate = "/repo/cert/anna.9farm.com.crt";
     sslCertificateKey = "/repo/cert/anna.9farm.com.key";
+    root = "/work/memoria/public";
     listen = [
       { addr = "[::]"; port = 80; }
       { addr = "[::]"; port = 443; ssl = true; }
@@ -21,6 +22,8 @@
     locations."/api" = {
       proxyPass = "http://127.0.0.1:22709";
     };
+    locations."/font" = {
+    };
     locations."/file" = {
       proxyPass = "http://127.0.0.1:22709";
       extraConfig = ''
@@ -30,6 +33,7 @@
     locations."/public/" = {
       proxyPass = "http://127.0.0.1:22709/";
       extraConfig = ''
+        proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-Proto https;
       '';
     };

@@ -27,6 +27,7 @@
     ifstat-legacy
     iftop
     inetutils
+    iperf3
     jq
     libsecret.dev
     lsb-release
@@ -42,6 +43,7 @@
     plocate
     protobuf
     psmisc
+    pwgen
     pyright
     python3
     ripgrep
