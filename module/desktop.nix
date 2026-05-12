@@ -91,6 +91,11 @@
       walker
       elephant
 
+# iphone
+      ifuse
+      gvfs
+      libimobiledevice
+
       imagemagick
 
       loupe # 图片查看

@@ -21,8 +21,15 @@
 
     locations."/api" = {
       proxyPass = "http://127.0.0.1:22709";
+      extraConfig = ''
+        client_max_body_size 100M;
+      '';
     };
     locations."/font" = {
+      extraConfig = ''
+        expires max;
+        access_log off;
+      '';
     };
     locations."/file" = {
       proxyPass = "http://127.0.0.1:22709";
@@ -39,6 +46,13 @@
         proxy_cache off;
         proxy_buffering off;
         gzip_proxied off;
+        proxy_read_timeout 86400s;
+        proxy_send_timeout 86400s;
+        proxy_connect_timeout 75s;
+        proxy_buffer_size 4096;
+        proxy_request_buffering off;
+        keepalive_timeout 86400s;
+        send_timeout 86400s;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-Proto https;
       '';
@@ -69,7 +83,7 @@
     locations."= /robots.txt" = {
       extraConfig = ''
         access_log off;
-        log_not_found off;
+      log_not_found off;
       '';
     };
 

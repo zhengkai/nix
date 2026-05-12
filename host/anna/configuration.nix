@@ -21,7 +21,7 @@
 
   boot.loader.systemd-boot = {
     enable = true;
-    configurationLimit = 30;
+    configurationLimit = 20;
     sortKey = "z-nixos"; # 让 win11 排在前面
   };
   boot.loader.efi.canTouchEfiVariables = true;

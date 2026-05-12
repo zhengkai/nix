@@ -7,6 +7,7 @@
     autoPatchelfHook
     autojump
     bash-language-server
+    bc
     brotli
     btop
     cmark
@@ -29,7 +30,9 @@
     inetutils
     iperf3
     jq
+    libmaxminddb
     libsecret.dev
+    lm_sensors
     lsb-release
     lsof
     lua-language-server
