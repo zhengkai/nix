@@ -33,6 +33,12 @@
     locations."/public/" = {
       proxyPass = "http://127.0.0.1:22709/";
       extraConfig = ''
+        proxy_pass_request_headers on;
+        proxy_http_version 1.1;
+        gzip off;
+        proxy_cache off;
+        proxy_buffering off;
+        gzip_proxied off;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-Proto https;
       '';
@@ -67,9 +73,13 @@
       '';
     };
 
+    locations."= /public/style.css" = {
+      alias = "/work/memoria/public/style.css";
+    };
+
     locations."= /public/favicon.webp" = {
+      alias = "/work/memoria/public/favicon.webp";
       extraConfig = ''
-        alias /work/memoria/public/favicon.webp;
         expires max;
         access_log off;
         log_not_found off;
@@ -77,8 +87,8 @@
     };
 
     locations."= /public/favicon.ico" = {
+      alias = "/work/memoria/public/favicon.ico";
       extraConfig = ''
-        alias /work/memoria/public/favicon.webp;
         expires max;
         access_log off;
         log_not_found off;
@@ -86,8 +96,8 @@
     };
 
     locations."= /favicon.ico" = {
+      alias = "/work/memoria/public/favicon.ico";
       extraConfig = ''
-        alias /work/memoria/public/favicon.ico;
         expires max;
         access_log off;
         log_not_found off;
