@@ -42,7 +42,7 @@
     nmap
     nodejs
     npm-check-updates
-    pipx
+    # pipx
     plocate
     protobuf
     psmisc

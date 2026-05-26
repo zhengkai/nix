@@ -6,11 +6,15 @@
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true;          # Win11 必须：TPM 2.0 模拟
+      vhostUserPackages = [
+        pkgs.virtiofsd
+      ];
     };
   };
 
   virtualisation.spiceUSBRedirection.enable = true;
   programs.dconf.enable = true;
+  programs.virt-manager.enable = true;
   security.polkit.enable = true;
 
   users.users.zhengkai.extraGroups = [ "libvirtd" "kvm" "input" "log" ];
@@ -21,6 +25,7 @@
     qemu_kvm
     spice-gtk
     virtio-win         # Windows virtio 驱动 ISO
+    virtiofsd
     polkit_gnome
     looking-glass-client
   ];

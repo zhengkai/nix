@@ -10,4 +10,4 @@ boot:
 
 update:
 	nix flake update
-	sudo nixos-rebuild switch --flake .
+	sudo http_proxy=http://192.168.50.207:8118 nixos-rebuild switch --flake .
