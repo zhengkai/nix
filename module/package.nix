@@ -37,6 +37,7 @@
     lsof
     lua-language-server
     mkvtoolnix
+    neovim
     net-tools
     networkmanagerapplet
     nmap

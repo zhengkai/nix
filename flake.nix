@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
@@ -36,7 +36,7 @@
           ./module/global.nix
           ./module/ssh.nix
           ./module/package.nix
-          ./module/unstable.nix
+          # ./module/unstable.nix
           ./module/dotfile.nix
 
           home-manager.nixosModules.home-manager
