@@ -10,6 +10,8 @@
     nginx
     gvfs
 
+    pulseaudio
+
     mpv
     jxrlib
   ];

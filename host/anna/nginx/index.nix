@@ -29,9 +29,17 @@
       sslCertificate = "/repo/cert/anna.9farm.com.crt";
       sslCertificateKey = "/repo/cert/anna.9farm.com.key";
       listen = [
-      { addr = "[::]"; port = 80; extraParameters = [ "default_server" "ipv6only=off" ]; }
-      { addr = "[::]"; port = 443; ssl = true; extraParameters = [ "default_server" "ipv6only=off" ]; }
+        { addr = "[::]"; port = 80; extraParameters = [ "default_server" "ipv6only=off" ]; }
+        { addr = "[::]"; port = 443; ssl = true; extraParameters = [ "default_server" "ipv6only=off" ]; }
       ];
+      locations."/pac/" = {
+        alias = "/work/pac/output/";
+        extraConfig = ''
+          autoindex on;
+          access_log off;
+          log_not_found off;
+        '';
+      };
       locations."/" = {
         extraConfig = ''
           default_type text/plain;

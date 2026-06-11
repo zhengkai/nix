@@ -10,6 +10,8 @@
     ./samba.nix
   ];
 
+  programs.steam.enable = true;
+
   boot.loader.timeout = 3;
 
   # Bootloader.
