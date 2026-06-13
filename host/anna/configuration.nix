@@ -8,6 +8,7 @@
     ./package.nix
     ./nginx/index.nix
     ./samba.nix
+    ./crontab/logseq.nix
   ];
 
   programs.steam.enable = true;

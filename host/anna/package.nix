@@ -12,6 +12,8 @@
 
     pulseaudio
 
+    appimage-run
+
     mpv
     jxrlib
   ];
