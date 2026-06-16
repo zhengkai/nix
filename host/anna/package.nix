@@ -14,6 +14,10 @@
 
     appimage-run
 
+    # swaynotificationcenter
+
+    pgadmin4-desktopmode
+
     mpv
     jxrlib
   ];

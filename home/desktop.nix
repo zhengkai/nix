@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
 {
-  services.mako.enable = true;
+  services.swaync.enable = true;
   programs.vscode.enable = true;
 }
