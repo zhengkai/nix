@@ -69,6 +69,7 @@
     wget
     whois
     zip
+    tzdata
 
     luarocks
     lua5_1

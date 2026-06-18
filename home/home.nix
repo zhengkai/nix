@@ -19,6 +19,7 @@
     PIPX_HOME = config.soulogic.dev.pipxPath;
     NPM_CONFIG_CACHE = "${config.soulogic.dev.path}/npm";
     LIBVIRT_DEFAULT_URI = "qemu:///system";
+    TZDIR = "${pkgs.tzdata}/share/zoneinfo";
   };
 
   programs.autojump.enable = true;

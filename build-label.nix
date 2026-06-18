@@ -1,3 +1,3 @@
 {
-	system.nixos.label = "0605_0651_33c361b";
+	system.nixos.label = "0618_1214_b4a265d";
 }
