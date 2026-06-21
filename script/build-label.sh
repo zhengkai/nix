@@ -13,8 +13,7 @@ DIFF="$(git diff -b --numstat | awk '{
 		if ($2 != "-") del += $2
 		files++
 	} END {
-		out = files "_file"
-		if (files > 1) out = out "s"
+		out = "f" files
 		if (add > 0) out = out "_a" add
 		if (del > 0) out = out "_d" del
 		print out

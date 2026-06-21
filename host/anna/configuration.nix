@@ -8,6 +8,7 @@
     ./package.nix
     ./nginx/index.nix
     ./samba.nix
+    ./pgsql.nix
     ./crontab/logseq.nix
   ];
 
@@ -37,7 +38,6 @@
     autoLogin.user = user;
   };
 
-  services.postgresql.enable = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
