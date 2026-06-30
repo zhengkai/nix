@@ -69,14 +69,12 @@
     description = "Zheng Kai";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-# configuration.nix
-programs.hyprland = {
-  enable = true;
-  # 如果你使用 NVIDIA 显卡：
-  # withUWSM = true;
-    withUWSM = true;
-};
 
+  # configuration.nix
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

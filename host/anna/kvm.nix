@@ -17,7 +17,7 @@
   programs.virt-manager.enable = true;
   security.polkit.enable = true;
 
-  users.users.zhengkai.extraGroups = [ "libvirtd" "kvm" "input" "log" ];
+  users.users.zhengkai.extraGroups = [ "libvirtd" "kvm" "input" "log" "video" "render" ];
 
   environment.systemPackages = with pkgs; [
     virt-manager
