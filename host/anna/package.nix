@@ -27,6 +27,11 @@
     level-zero
     nvtopPackages.intel
 
+    libx11
+    libxext
+    libxfixes
+    libxrandr
+
     # swaynotificationcenter
 
     pgadmin4-desktopmode

@@ -78,20 +78,11 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Intel 显卡驱动
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver    # iHD driver（VA-API 硬件加速）
-      vpl-gpu-rt           # Intel Video Processing Library
-    ];
+  boot.kernel.sysctl = {
+    "net.ipv6.conf.all.disable_ipv6" = 1;
+    "net.ipv6.conf.default.disable_ipv6" = 1;
+    "net.ipv6.conf.lo.disable_ipv6" = 1;
   };
-
-  # 确保使用正确的 Vulkan 驱动
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
-  };
-
 
   nixpkgs.config.allowUnfree = true;
 
