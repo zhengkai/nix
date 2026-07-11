@@ -54,6 +54,7 @@
     silver-searcher
     socat
     stderred
+    sysstat
     tig
     tmux
     trash-cli
