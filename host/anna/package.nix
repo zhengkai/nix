@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  services.gnome.gnome-keyring.enable = true;
   environment.systemPackages = with pkgs; [
     qq
     wechat
@@ -26,6 +27,8 @@
     intel-oneapi-toolkit
     level-zero
     nvtopPackages.intel
+
+    libsecret
 
     libx11
     libxext

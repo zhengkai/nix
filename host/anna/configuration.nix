@@ -16,17 +16,17 @@
 
   boot.loader.timeout = 3;
 
-  # Bootloader.
-  #  boot.loader.grub = {
-  #    enable = true;
-  #    device = "/dev/vda";
-  #    useOSProber = true;
-  #  };
-
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 20;
-    sortKey = "z-nixos"; # 让 win11 排在前面
+    extraEntries = {
+      "windows.conf" = ''
+        title Windows 11
+        efi /EFI/Microsoft/Boot/bootmgfw.efi
+        sort-key a-windows
+        '';
+    };
+    editor = false;
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
