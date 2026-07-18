@@ -4,6 +4,8 @@
 
   imports = [
     ./memoria.nix
+    # ./tank.nix
+    ./stock.nix
   ];
 
   environment.systemPackages = with pkgs; [

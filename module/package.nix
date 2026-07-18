@@ -68,6 +68,7 @@
     v2ray-geoip
     pssh
     vim
+    zlib
     wget
     whois
     zip
